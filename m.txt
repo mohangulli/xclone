@@ -1,0 +1,6 @@
+# mohangullipalli16
+# uz4TuAXPP7xXcdE
+MONGO_URI=mongodb+srv://mohangullipalli16:uz4TuAXPP7xXcdE@cluster0.pyah9cq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+PORT=5000
+JWT_SECRET=ePHFELiXEw+Hk/Gfjhx6ABrO1r4qFeRtUE12ps57whY=
+NODE_ENV=development
