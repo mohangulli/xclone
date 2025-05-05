@@ -52,7 +52,14 @@ default:"",
     link:{
         type:String,
         default:"",  
-    }
+    },
+    likedPosts:[
+     {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Post",
+        default:[],
+     }   
+    ],
 },{timestamps:true} // when it is created or updated
 );
 const User= mongoose.model("User",userSchema);
