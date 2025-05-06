@@ -8,9 +8,9 @@ dotenv.config({
     api_secret:process.env.CLOUDINARY_API_SECRET,
 });
 cloudinary.config()
-import authRoutes from "./routes/auth.routes.js";
-import userRoutes from "./routes/user.routes.js";
-import postRoutes  from "./routes/post.routes.js";
+import authRoutes from "./routes/auth.route.js";
+import userRoutes from "./routes/user.route.js";
+import postRoutes  from "./routes/post.route.js";
 import connectMongoDB from "./db/connectMongoDB.js";
 const app=express();
 const PORT=process.env.PORT||5000;
