@@ -9,15 +9,18 @@ export default {
   plugins: [daisyui],
   daisyui: {
     themes: [
-      "light", // optional default light theme
+      "black",
       {
         black: {
-          primary: "#1D9BF0",
-          secondary: "#181818",
-          accent: "#1D9BF0",
-          neutral: "#000000",
-          "base-100": "#000000",       // background
-          "base-content": "#FFFFFF",   // text
+          "primary": "rgb(29, 155, 240)",
+          "secondary": "rgb(24, 24, 24)",
+          "accent": "#37cdbe",
+          "neutral": "#3d4451",
+          "base-100": "#1f2937",
+          "info": "#3ABFF8",
+          "success": "#36D399",
+          "warning": "#FBBD23",
+          "error": "#F87272",
         },
       },
     ],
