@@ -6,7 +6,7 @@ import { generateTokenAndSetCookie} from "../lib/utils/generateTokenAndSetCookie
 export const signup = async(req,res)=>{
 
 try{
-    const {fullname,username,email,password}=req.body;
+    const {fullName,username,email,password}=req.body;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 if(!emailRegex.test(email))
 {
@@ -34,7 +34,7 @@ if(!emailRegex.test(email))
     const hashPassword=await bcrypt.hash(password,salt);
     const newUser=new User(
         {
-            fullname,
+            fullName,
             username,
             email,
             password:hashPassword
@@ -47,7 +47,7 @@ if(!emailRegex.test(email))
       res.status(201).json(
         {
             _id:newUser._id,
-            fullname:newUser.fullname,
+            fullname:newUser.fullName,
             username:newUser.username,
             email:newUser.email,
             followers:newUser.followers,
@@ -92,7 +92,7 @@ generateTokenAndSetCookie(user._id,res);
       res.status(201).json(
         {
             _id:user._id,
-            fullname:user.fullname,
+            fullname:user.fullName,
             username:user.username,
             email:user.email,
             followers:user.followers,
