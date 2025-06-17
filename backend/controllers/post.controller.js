@@ -111,8 +111,11 @@ return res.status(400).json({error:"Post is not found"});
 await Post.updateOne({_id:postId},{$pull:{likes:userId}});
 // user liked posts 
 await User.updateOne({_id:userId},{$pull:{likedPosts:postId}});
+const updatedLikes1 = post.likes.filter((id) => id.toString() !== userId.toString()) 
+res.status(200).json(updatedLikes1);
 
-res.status(200).json({message:"post Unliked sucessfully"});
+//const updatedLikes1=post.likes.filter((id)=>id.toString()!==userId.toString())
+//res.status(200).json(updatedLikes1);
 
     }else{
 // like post
@@ -130,7 +133,8 @@ type:"like",
     }
 )
 await notification.save();
-res.status(200).json({message:"post liked sucessfully"});
+const updatedLikes=post.likes;
+res.status(200).json(updatedLikes);
 
     }
 
@@ -236,4 +240,4 @@ res.status(200).json(posts);
         console.log("Errror in getUserposts controller",error);
         res.status(500).json({error:"Internal server error"});
     }
-}
+} 
